@@ -8,7 +8,9 @@ RUN pip install --upgrade pip
 COPY requirements.txt /code/
 
 RUN pip install -r requirements.txt
-RUN npm install
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get update && apt-get install -y nodejs
 COPY . /code/
 
 EXPOSE 8000
