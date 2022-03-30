@@ -8,6 +8,7 @@ RUN pip install --upgrade pip
 COPY requirements.txt /code/
 
 RUN pip install -r requirements.txt
+RUN npm install
 COPY . /code/
 
 EXPOSE 8000
